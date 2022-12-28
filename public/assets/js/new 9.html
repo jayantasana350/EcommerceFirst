@@ -1,0 +1,74 @@
+<input type="checkbox" data-product="'.$sizename->product_id.'" class="btn-check btn_check" id="btn-check-2" value="'.$sizename->size_id.'"> <label class="btn btn-primary" for="btn-check-2">'.$sizename->get_size->size_name.'</label><style>
+.sizeadd label.bt_check{position: relative;} .sizeadd input.btn_check[type=checkbox] { position: absolute; cursor: pointer; width: 80px; height: 30px; background: transparent; opacity: 0; } .size-variant label.btn.btn_primary { height: 30px !important; width: auto !important; cursor: pointer !important; border: 1px solid #cdcdcd !important; border-radius: 0px !important; padding: 3px 10px 0px 10px !important; margin-right: 5px !important; } </style>
+
+.btn_check {
+    position: absolute;
+    /* clip: rect(1px,0px,0px,0px); */
+    pointer-events: none;
+    width: 59px;
+    height: 30px;
+    left: 0;
+    opacity: 0;
+}
+ 
+ 
+ $output = $output . '<li class="size_id" data-product="'.$sizename->product_id.'" id="size_id" value="'.$sizename->size_id.'"><input name="get_size" class="input_getsize" type="text" value="'.$sizename->get_size->size_name.'" readonly></li>';
+
+$output = $output . '<input type="checkbox" class="btn_check size_id" id="" value="'.$color->color_id.'" data-product="'.$color->product_id.'"><label class="btn btn-primary" class="bt_check" for="btn-check-2">'.$color->get_color->color_name.'</label>';
+
+$output = $output . '<h3 class="price-detail getAttrPrice"> <input class="btn_price" type="text" name="get_price" value="$'.$prices[0]->price.'.00" readonly></h3>';
+
+
+$output = $output . '<label class="btn btn_outline_primary" style="margin-right: 5px;" for="btn-check-outlined">'.$color->get_color->color_name.'<input type="checkbox" class="btn-check color_id" name="color_names" id="btn-check-outlined" data-product="'.$color->product_id.'" id="color_id"  autocomplete="off" value="'.$color->color_id.'"> </label>';
+
+$output = $output . '<label class="btn btn_outline_primary" style="margin-right: 5px;" for="btn-check-outlined">'.$sizename->get_size->size_name.'<input type="checkbox" class="btn-check size_id" name="size_names" id="btn-check-outlined" data-product="'.$sizename->product_id.'" id="size_id" autocomplete="off" value="'.$sizename->size_id.'"> </label>';
+
+
+
+<style>
+        .product-right .color-variant li {
+            height: 30px;
+            width: auto;
+            cursor: pointer;
+            border: 1px solid #cdcdcd;
+            border-radius: 0px;
+            padding: 3px 10px 0px 10px;
+        }
+
+        .btn_outline_primary {
+            height: 30px;
+            width: auto;
+            margin-right: 10px;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid #cdcecd;
+            padding-bottom: 25px !important;
+        }
+
+        .product-right .size-box ul li {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid #cdcecd;
+            line-height: 31px;
+        }
+
+        input.btn_price {
+        border: none;
+        background: transparent;
+        cursor: text !important;
+    }
+
+    input.input_getsize{
+        border: none;
+        background: transparent;
+        text-align: center;
+        max-width: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    </style>
