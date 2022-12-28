@@ -142,32 +142,6 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-Route::get('/cart-modal', 'FrontEndController@CartModal')->name('CartModal');
-Route::get('/qty-counter', 'FrontEndController@QTYCounter')->name('QTYCounter');
-Route::get('/cart-top', 'FrontEndController@CartTop')->name('CartTop');
-Route::get('/cart-bottom', 'FrontEndController@CartBottom')->name('CartBottom');
-Route::get('/cart-left', 'FrontEndController@CartLeft')->name('CartLeft');
-Route::get('/cart-right', 'FrontEndController@CartRight')->name('CartRight');
-Route::get('/newsletter', 'FrontEndController@NewsLetter')->name('NewsLetter');
-Route::get('/exit', 'FrontEndController@Exit')->name('Exit');
-Route::get('/christmas', 'FrontEndController@Christmas')->name('Christmas');
-Route::get('/black-friday', 'FrontEndController@BlackFriday')->name('BlackFriday');
-Route::get('/cyber-monday', 'FrontEndController@CyberMonday')->name('CyberMonday');
-Route::get('/new-year', 'FrontEndController@NewYear')->name('NewYear');
-Route::get('/cookie-bottom', 'FrontEndController@CookieBottom')->name('CookieBottom');
-Route::get('/cookie-left', 'FrontEndController@CookieLeft')->name('CookieLeft');
-Route::get('/cookie-right', 'FrontEndController@CookieRight')->name('CookieRight');
-Route::get('/ajax-search', 'FrontEndController@AjaxSearch')->name('AjaxSearch');
-Route::get('/invoice-one', 'FrontEndController@InvoiceOne')->name('InvoiceOne');
-Route::get('/invoice-two', 'FrontEndController@InvoiceTwo')->name('InvoiceTwo');
-Route::get('/invoice-three', 'FrontEndController@InvoiceThree')->name('InvoiceThree');
-Route::get('/invoice-four', 'FrontEndController@InvoiceFour')->name('InvoiceFour');
-Route::get('/order-success', 'FrontEndController@OrderSuccess')->name('OrderSuccess');
-Route::get('/order-success2', 'FrontEndController@OrderSuccess2')->name('OrderSuccess2');
-Route::get('/email-template', 'FrontEndController@EmailTemplate')->name('EmailTemplate');
-Route::get('/email-template2', 'FrontEndController@EmailTemplate2')->name('EmailTemplate2');
-Route::get('/elements-page', 'FrontEndController@ElementsPage')->name('ElementsPage');
-
 
 Route::get('/top-filter', 'FrontEndController@TopFilter')->name('TopFilter');
 Route::get('/modern', 'FrontEndController@Modern')->name('Modern');

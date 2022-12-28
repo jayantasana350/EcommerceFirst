@@ -169,51 +169,6 @@ class FrontEndController extends Controller
     function CommingSoon(){
         return view('frontend.pages.commingsoon');
     }
-    function CartModal(){
-        return view('frontend.features.cart-modal');
-    }
-    function QTYCounter(){
-        return view('frontend.features.qty-counter');
-    }
-    function CartTop(){
-        return view('frontend.features.cart-top');
-    }
-    function CartBottom(){
-        return view('frontend.features.cart-bottom');
-    }
-    function CartLeft(){
-        return view('frontend.features.cart-left');
-    }
-    function CartRight(){
-        return view('frontend.features.cart-right');
-    }
-    function NewsLetter(){
-        return view('frontend.features.newsletter');
-    }
-    function Exit(){
-        return view('frontend.features.exit');
-    }
-    function Christmas(){
-        return view('frontend.features.christmas');
-    }
-    function BlackFriday(){
-        return view('frontend.features.black-friday');
-    }
-    function CyberMonday(){
-        return view('frontend.features.cyber-monday');
-    }
-    function NewYear(){
-        return view('frontend.features.new-year');
-    }
-    function CookieBottom(){
-        return view('frontend.features.cookie-bottom');
-    }
-    function CookieLeft(){
-        return view('frontend.features.cookie-left');
-    }
-    function CookieRight(){
-        return view('frontend.features.cookie-right');
-    }
     function AjaxSearch(){
         return view('frontend.pages.search');
     }
