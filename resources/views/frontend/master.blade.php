@@ -100,12 +100,9 @@
                                                         aria-hidden="true"></i></div>
                                             </li>
                                             <li><a href="index.html">Home</a></li>
-                                            <li class="mega">
-                                                <a href="#">feature <div class="lable-nav">new</div></a> </li>
+                                            <li><a href="{{ route('ShopPage') }}">shop</a></li>
                                             <li>
-                                                <a href="{{ route('ShopPage') }}">shop</a></li>
-                                            <li>
-                                                <a href="#">product</a></li>
+                                                <a href="{{ route('SixGrid') }}">product</a></li>
                                             <li><a href="#">pages</a></li>
                                             <li><a href="#">blog</a></li>
                                         </ul>
@@ -257,139 +254,27 @@
                                         <li><a href="{{ route('Front') }}">Home</a></li>
                                         <li>
                                             <a href="{{ route('ShopPage') }}">shop</a>
-                                            <ul>
-                                                <li><a href="category-page(top-filter).html">top filter<span
-                                                            class="new-tag">new</span></a></li>
-                                                <li><a href="category-page(modern).html">modern<span
-                                                            class="new-tag">new</span></a></li>
-                                                <li><a href="{{ route('ShopPage') }}">left sidebar</a></li>
-                                                <li><a href="category-page(right).html">right sidebar</a></li>
-                                                <li><a href="category-page(no-sidebar).html">no sidebar</a></li>
-                                                <li><a href="category-page(sidebar-popup).html">sidebar popup</a>
-                                                </li>
-                                                <li><a href="category-page(metro).html">metro</a></li>
-                                                <li><a href="category-page(full-width).html">full width</a></li>
-                                                <li><a href="category-page(infinite-scroll).html">infinite
-                                                        scroll</a></li>
-                                                <li><a href=category-page(3-grid).html>three grid</a></li>
-                                                <li><a href="category-page(6-grid).html">six grid</a></li>
-                                                <li><a href="category-page(list-view).html">list view</a></li>
-                                            </ul>
                                         </li>
                                         <li>
-                                            <a href="#">product</a>
-                                            <ul>
-                                                <li><a href="product-page(360-view).html">360 view <span
-                                                            class="new-tag">new</span></a></li>
-                                                <li><a href="product-page(video-thumbnail).html">video
-                                                        thumbnail<span class="new-tag">new</span></a></li>
-                                                <li>
-                                                    <a href="#">sidebar</a>
-                                                    <ul>
-                                                        <li><a href="product-page.html">left sidebar</a></li>
-                                                        <li><a href="product-page(right-sidebar).html">right
-                                                                sidebar</a>
-                                                        </li>
-                                                        <li><a href="product-page(no-sidebar).html">no sidebar</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">thumbnail image</a>
-                                                    <ul>
-                                                        <li><a href="product-page(left-image).html">left image</a>
-                                                        </li>
-                                                        <li><a href="product-page(right-image).html">right image</a>
-                                                        </li>
-                                                        <li><a href="product-page(image-outside).html">image
-                                                                outside</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">three column</a>
-                                                    <ul>
-                                                        <li><a href="product-page(3-col-left).html">thumbnail
-                                                                left</a>
-                                                        </li>
-                                                        <li><a href="product-page(3-col-right).html">thumbnail
-                                                                right</a>
-                                                        </li>
-                                                        <li><a href="product-page(3-column).html">thubnail
-                                                                bottom</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="product-page(4-image).html">four image</a></li>
-                                                <li><a href="product-page(sticky).html">sticky</a></li>
-                                                <li><a href="product-page(accordian).html">accordian</a></li>
-                                                <li><a href="product-page(bundle).html">bundle</a></li>
-                                                <li><a href="product-page(image-swatch).html">image swatch </a></li>
-                                                <li><a href="product-page(vertical-tab).html">vertical tab</a></li>
-                                            </ul>
+                                            <a href="{{ route('SixGrid') }}">product</a>
                                         </li>
                                         <li><a href="#">pages</a>
                                             <ul>
-                                                <li>
-                                                    <a href="#">vendor</a>
-                                                    <ul>
-                                                        <li><a href="{{ route('VendorDashboard') }}">vendor dashboard</a>
-                                                        </li>
-                                                        <li><a href="{{ route('VendorProfile') }}">vendor profile</a></li>
-                                                        <li><a href="{{ route('BecomeVendor') }}">become vendor</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">account</a>
-                                                    <ul>
-                                                        <li><a href="{{ route('Wishlist') }}">wishlist</a></li>
-                                                        <li><a href="{{ route('CartPage') }}">cart</a></li>
-                                                        <li><a href="{{ route('FrontDashboard') }}">Dashboard</a></li>
-                                                        <li><a href="{{ url('login') }}">login</a></li>
-                                                        <li><a href="{{ url('register') }}">register</a></li>
-                                                        <li><a href="{{ route('Contact') }}">contact</a></li>
-                                                        <li><a href="{{ route('ForgetPassword') }}">forget password</a></li>
-                                                        <li><a href="{{ route('Profile') }}">profile</a></li>
-                                                        <li><a href="{{ route('ProductCheckout') }}">checkout</a></li>
-                                                        <li><a href="{{ route('OrderSuccess') }}">order success</a></li>
-                                                        <li><a href="{{ route('OrderTracking') }}">order tracking<span
-                                                                    class="new-tag">new</span></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">portfolio</a>
-                                                    <ul>
-                                                        <li><a href="{{ route('PortfolioGrid') }}">grid 3</a></li>
-                                                        <li><a href="{{ route('PortfolioMasonary') }}">grid 4</a></li>
-                                                    </ul>
-                                                </li>
                                                 <li><a href="{{ route('AboutUs') }}">about us</a></li>
+                                                <li><a href="{{ route('Wishlist') }}">wishlist</a></li>
+                                                <li><a href="{{ route('CartPage') }}">cart</a></li>
+                                                <li><a href="{{ route('Contact') }}">contact</a></li>
+                                                <li><a href="{{ route('ForgetPassword') }}">forget password</a></li>
+                                                <li><a href="{{ route('Profile') }}">profile</a></li>
+                                                <li><a href="{{ route('ProductCheckout') }}">checkout</a></li>
+                                                <li><a href="{{ route('OrderSuccess') }}">order success</a></li>
+                                                <li><a href="{{ route('OrderTracking') }}">order tracking<span class="new-tag">new</span></a></li>
                                                 <li><a href="{{ route('Search') }}">search</a></li>
-                                                <li><a href="{{ route('Review') }}">review</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">compare</a>
-                                                    <ul>
-                                                        <li><a href="{{ route('Compare') }}">compare</a></li>
-                                                        <li><a href="{{ route('Compare') }}">compare-2</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="{{ route('Collection') }}">collection</a></li>
-                                                <li><a href="{{ route('Lookbook') }}">lookbook</a></li>
-                                                <li><a href="{{ route('SiteMap') }}">site map</a>
-                                                </li>
-                                                <li><a href="{{ route('404Page') }}">404</a></li>
-                                                <li><a href="{{ route('CommingSoon') }}">coming soon</a></li>
                                                 <li><a href="{{ route('FAQ') }}">FAQ</a></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="#">blog</a>
-                                            <ul>
-                                                <li><a href="{{ route('BlogLeftSidebar') }}">left sidebar</a></li>
-                                                <li><a href="{{ route('BlogRightSidebar') }}">right sidebar</a></li>
-                                                <li><a href="{{ route('BlogNoSidebar') }}">no sidebar</a></li>
-                                                <li><a href="{{ route('BlogDetails') }}">blog details</a></li>
-                                            </ul>
+                                            <a href="{{ route('BlogLeftSidebar') }}">blog</a>
                                         </li>
                                     </ul>
                                 </nav>

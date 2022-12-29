@@ -271,7 +271,7 @@
                                 <h3>$32.96</h3>
                                     <h6 class="product-title pb-1">Colors</h6>
                                     <div class="color-variant">
-                                        <ul>
+                                        <ul class="color-variant coloradd" id="getColorToPrice">
                                             <li class="bg-light0"></li>
                                             <li class="bg-light1"></li>
                                             <li class="bg-light2"></li>
@@ -279,11 +279,13 @@
                                     </div>
                                     <h6 class="product-title">Sizes</h6>
                                     <div class="size-box">
-                                        <ul>
-                                            <li class="active"><a href="javascript:void(0)">s</a></li>
-                                            <li><a href="javascript:void(0)">m</a></li>
-                                            <li><a href="javascript:void(0)">l</a></li>
-                                            <li><a href="javascript:void(0)">xl</a></li>
+                                        <ul class="size-variant sizeadd" id="getSizeToPrice">
+                                            @foreach ($attributes as $sitem)
+                                                @if ($sitem->product_id == $products->id)
+                                                <input type="radio" class="btn_check size_id" id="" name="size_id" value="{{ $sitem->get_size->size_name }}" data-product="{{ $sitem->product_id }}">
+                                                <label class="btn btn_primary bt_check"  for="btn-check-2">{{ $sitem->get_size->size_name }}</label>
+                                                @endif
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <h6 class="product-title">quantity</h6>
@@ -310,3 +312,151 @@
     @endforeach
     <!-- Quick-view modal popup end-->
 @endsection
+@section('footer_js')
+<style>
+    .product-right .color-variant li {
+        height: 30px;
+        width: auto;
+        cursor: pointer;
+        border: 1px solid #cdcdcd;
+        border-radius: 0px;
+        padding: 3px 10px 0px 10px;
+    }
+
+    .btn_outline_primary {
+        height: 30px;
+        width: auto;
+        margin-right: 10px;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid #cdcecd;
+        padding-bottom: 25px !important;
+    }
+
+    .product-right .size-box ul li {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        margin-right: 10px;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid #cdcecd;
+        line-height: 31px;
+    }
+
+    input.btn_price {
+    border: none;
+    background: transparent;
+    cursor: text !important;
+}
+
+input.input_getsize{
+    border: none;
+    background: transparent;
+    text-align: center;
+    max-width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.sizeadd label.bt_check{
+    position: relative;
+}
+
+.sizeadd input.btn_check[type=radio] {
+    position: absolute;
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    background: transparent;
+    opacity: 0.09;
+}
+.size-variant label.btn.btn_primary {
+    height: 30px;
+    width: auto;
+    cursor: pointer;
+    border: 1px solid #cdcdcd;
+    border-radius: 0px;
+    padding: 3px 10px 0px 10px;
+    margin-right: 5px;
+    z-index: 9999;
+}
+
+.sizeadd input.[type=radio]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555555;
+    border-radius: 3px;
+    background-color: white;
+    /* opacity: 0; */}.sizeadd input.[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+.color-variant input.color_id{
+    position: relative;
+}
+
+.color-variant input.color_id[type=radio] {
+    position: absolute;
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    background: transparent;
+    opacity: 0.09;
+}
+.color-variant label.btn_primary{
+        height: 30px;
+        width: auto;
+        cursor: pointer;
+        border: 1px solid #cdcdcd;
+        border-radius: 0px;
+        padding: 3px 10px 0px 10px;
+        margin-right: 5px;
+    }
+
+    .color-variant input.color_id[type=radio]:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        left: 0;
+        border: 2px solid #555555;
+        border-radius: 3px;
+        background-color: white;
+        opacity: 0;
+}
+.color-variant input.btn_check[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+</style>

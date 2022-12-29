@@ -28,4 +28,8 @@ class Attributes extends Model
         return $this->hasMany( Cart::class, 'product_id');
     }
 
+    function sattributes(){
+        return $this->belongsTo( Product::class, 'productattr');
+    }
+
 }

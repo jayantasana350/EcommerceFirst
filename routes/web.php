@@ -89,7 +89,7 @@ Route::get('/product-permanernt-delete/{id}', 'ProductController@ProductPermanen
 // Frontend Route
 Route::get('/shop-quick-view/{id}', 'FrontEndController@ShopQuicView')->name('ShopQuicView');
 Route::get('/single-product/{slug}', 'FrontEndController@SingleProduct')->name('SingleProduct');
-Route::get('/shop', 'FrontEndController@ShopPage')->name('ShopPage');
+Route::get('/shop-products', 'FrontEndController@ShopPage')->name('ShopPage');
 
 // Ajax Route For Variaiotn
 // Route::get('/product/get/size/{color}/{product}', 'FrontEndController@GetSize')->name('GetSize');
@@ -142,56 +142,14 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-
-Route::get('/top-filter', 'FrontEndController@TopFilter')->name('TopFilter');
-Route::get('/modern', 'FrontEndController@Modern')->name('Modern');
-Route::get('/left-sidebar', 'FrontEndController@LeftSidebar')->name('LeftSidebar');
-Route::get('/right-sidebar', 'FrontEndController@RightSidebar')->name('RightSidebar');
-Route::get('/no-sidebar', 'FrontEndController@NoSidebar')->name('NoSidebar');
-Route::get('/sidebar-popup', 'FrontEndController@SidebarPopUp')->name('SidebarPopUp');
-Route::get('/metro', 'FrontEndController@Metro')->name('Metro');
-Route::get('/full-width', 'FrontEndController@FullWidth')->name('FullWidth');
-Route::get('/initiate-scroll', 'FrontEndController@InitiateScroll')->name('InitiateScroll');
-Route::get('/three-grid', 'FrontEndController@ThreeGrid')->name('ThreeGrid');
-Route::get('/six-grid', 'FrontEndController@SixGrid')->name('SixGrid');
-Route::get('/last-grid', 'FrontEndController@LastGrid')->name('LastGrid');
-
-Route::get('/360-view', 'FrontEndController@360View')->name('360View');
-Route::get('/video-thumbnail', 'FrontEndController@VideoThumbnail')->name('VideoThumbnail');
-Route::get('/thumbnail-image-left', 'FrontEndController@ThumbnailImageLeft')->name('ThumbnailImageLeft');
-Route::get('/thumbnail-image-right', 'FrontEndController@ThumbnailImageRight')->name('ThumbnailImageRight');
-Route::get('/thumbnail-image-outside', 'FrontEndController@ThumbnailImageOut')->name('ThumbnailImageOut');
-Route::get('/thumbnail-left', 'FrontEndController@ThumbnailLeft')->name('ThumbnailLeft');
-Route::get('/thumbnail-right', 'FrontEndController@ThumbnailRight')->name('ThumbnailRight');
-Route::get('/thumbnail-bottom', 'FrontEndController@ThumbnailBottom')->name('ThumbnailBottom');
-Route::get('/four-image', 'FrontEndController@FourImage')->name('FourImage');
-Route::get('/sticky', 'FrontEndController@Sticky')->name('Sticky');
-Route::get('/accordian', 'FrontEndController@Accordian')->name('Accordian');
-Route::get('/bundle', 'FrontEndController@Bundle')->name('Bundle');
-Route::get('/image-swatch', 'FrontEndController@ImageSwatch')->name('ImageSwatch');
-Route::get('/vertical-tab', 'FrontEndController@VerticalTab')->name('VerticalTab');
-
-Route::get('/vendor-dashboard', 'FrontEndController@VendorDashboard')->name('VendorDashboard');
-Route::get('/vendor-profile', 'FrontEndController@VendorProfile')->name('VendorProfile');
-Route::get('/become-vendor', 'FrontEndController@BecomeVendor')->name('BecomeVendor');
+Route::get('/about-us', 'FrontEndController@AboutUs')->name('AboutUs');
 Route::get('/wishlist', 'FrontEndController@Wishlist')->name('Wishlist');
-Route::get('/cart-page', 'FrontEndController@Cart')->name('Cart');
-Route::get('/front-dashbard', 'FrontEndController@FrontDashboard')->name('FrontDashboard');
 Route::get('/contact', 'FrontEndController@Contact')->name('Contact');
 Route::get('/forget-password', 'FrontEndController@ForgetPassword')->name('ForgetPassword');
 Route::get('/profile', 'FrontEndController@Profile')->name('Profile');
 Route::get('/order-success', 'FrontEndController@OrderSuccess')->name('OrderSuccess');
 Route::get('/order-tracking', 'FrontEndController@OrderTracking')->name('OrderTracking');
-Route::get('/portfolio-grid', 'FrontEndController@PortfolioGrid')->name('PortfolioGrid');
-Route::get('/portfolio-mesonary', 'FrontEndController@PortfolioMasonary')->name('PortfolioMasonary');
-Route::get('/about-us', 'FrontEndController@AboutUs')->name('AboutUs');
 Route::get('/search', 'FrontEndController@Search')->name('Search');
-Route::get('/review', 'FrontEndController@Review')->name('Review');
-Route::get('/compare', 'FrontEndController@Compare')->name('Compare');
-Route::get('/collection', 'FrontEndController@Collection')->name('Collection');
-Route::get('/lookbook', 'FrontEndController@Lookbook')->name('Lookbook');
-Route::get('/site-map', 'FrontEndController@SiteMap')->name('SiteMap');
-Route::get('/404-page', 'FrontEndController@404Page')->name('404Page');
-Route::get('/comming-soon', 'FrontEndController@CommingSoon')->name('CommingSoon');
 Route::get('/FAQ', 'FrontEndController@FAQ')->name('FAQ');
+Route::get('/shop', 'FrontEndController@SixGrid')->name('SixGrid');
 

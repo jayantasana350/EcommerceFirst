@@ -17,9 +17,12 @@ class FrontEndController extends Controller
     function Front(){
         $product = Product::latest()->get();
         $attributes = Attributes::all();
+        $colle_ction = collect($attributes);
+        $groupdby = $colle_ction->groupBy('size_id');
         return view('frontend.front',[
             'product' => $product,
             'attributes' => $attributes,
+            'groupdby' => $groupdby,
         ]);
     }
 
@@ -97,35 +100,14 @@ class FrontEndController extends Controller
         ]);
     }
 
-    function BlogRightSidebar(){
-        return view('frontend.rightblog');
+    function AboutUs(){
+        return view('frontend.pages.about-us');
     }
-
-    function BlogNoSidebar(){
-        return view('frontend.blognosidebar');
-    }
-
-    function VendorDashboard(){
-        return view('frontend.pages.vendor-dashboard');
-    }
-    function VendorProfile(){
-        return view('frontend.pages.vendor-profile');
-    }
-    function BecomeVendor(){
-        return view('frontend.pages.become-vendor');
-    }
-
     function Wishlist(){
         return view('frontend.pages.wishlist');
     }
-    function FrontDashboard(){
-        return view('frontend.pages.front-dashbard');
-    }
     function Contact(){
         return view('frontend.pages.contact');
-    }
-    function Cart(){
-        return view('frontend.cart');
     }
     function ForgetPassword(){
         return view('frontend.pages.forget-password');
@@ -139,62 +121,14 @@ class FrontEndController extends Controller
     function OrderTracking(){
         return view('frontend.pages.order-tracking');
     }
-    function PortfolioGrid(){
-        return view('frontend.pages.portfolio-grid');
-    }
-    function PortfolioMasonary(){
-        return view('frontend.pages.portfolio-mesonary');
-    }
-    function AboutUs(){
-        return view('frontend.pages.about-us');
-    }
     function Search(){
         return view('frontend.pages.search');
     }
-    function Review(){
-        return view('frontend.pages.review');
+    function FAQ(){
+        return view('frontend.pages.FAQ');
     }
-    function Compare(){
-        return view('frontend.pages.compare');
-    }
-    function Collection(){
-        return view('frontend.pages.collection');
-    }
-    function Lookbook(){
-        return view('frontend.pages.lookbook');
-    }
-    function SiteMap(){
-        return view('frontend.pages.site-map');
-    }
-    function CommingSoon(){
-        return view('frontend.pages.commingsoon');
-    }
-    function AjaxSearch(){
-        return view('frontend.pages.search');
-    }
-    function InvoiceOne(){
-        return view('frontend.features.invoice-one');
-    }
-    function InvoiceTwo(){
-        return view('frontend.features.invoice-two');
-    }
-    function InvoiceThree(){
-        return view('frontend.features.invoice-three');
-    }
-    function InvoiceFour(){
-        return view('frontend.features.invoice-four');
-    }
-    function OrderSuccess2(){
-        return view('frontend.features.order-success2');
-    }
-    function EmailTemplate(){
-        return view('frontend.features.email-template');
-    }
-    function EmailTemplate2(){
-        return view('frontend.features.email-template2');
-    }
-    function ElementsPage(){
-        return view('frontend.features.elements-page');
+    function SixGrid(){
+        return view('frontend.six_grid');
     }
 
 

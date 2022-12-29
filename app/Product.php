@@ -34,4 +34,8 @@ class Product extends Model
         return $this->hasMany( Order::class, 'product_id');
     }
 
+    function sattributes(){
+        return $this->hasMany( Attributes::class, 'productattr');
+    }
+
 }
