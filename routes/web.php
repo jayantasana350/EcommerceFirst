@@ -102,11 +102,17 @@ Route::get('/product/get/res/color/to/price/{color}/{product}', 'FrontEndControl
 Route::get('/product/get/color/wise/size/{color}/{product}', 'FrontEndController@GetColorWiseSize')->name('GetColorWiseSize');
 Route::get('/product/get/size/wise/price/{price}/{product}', 'FrontEndController@GetSizeWisePrice')->name('GetSizeWisePrice');
 
+
+Route::get('/get/quick/color/to/size/{color}/{product}', 'FrontEndController@QuickSizeWiseColor')->name('QuickSizeWiseColor');
+Route::get('/quick-view-modal/{id}', 'FrontEndController@QuickModal')->name('QuickModal');
+
 Route::post('/add/to/cart', 'CartController@AddToCart')->name('AddToCart');
 // Route::get('/cart/page', 'CartController@CartPage')->name('CartPage');
 Route::get('/cart/page', 'CartController@CartPage')->name('CartPage');
 Route::post('/update/cart', 'CartController@UpdateCart')->name('UpdateCart');
 Route::get('/single/cart/delete/{id}', 'CartController@SingleCartDelete')->name('SingleCartDelete');
+
+Route::post('/quick-add-to-cart', 'CartController@QuickAddToCart')->name('QuickAddToCart');
 
 Route::get('/product/checkout', 'CheckoutController@ProductCheckout')->name('ProductCheckout');
 Route::get('/api/get-state-list/{id}', 'CheckoutController@GetState')->name('GetState');

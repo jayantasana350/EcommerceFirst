@@ -84,7 +84,7 @@
                                     @endforeach
                                 </div> --}}
                                 <div class="priceadd">
-                                    <h3 class="price-detail getAttrPrice">$45.00-$60.00<del>$459.00</del><span>55% off</span></h3>
+                                    <h3 class="price-detail getAttrPrice"> $45.00<span>55% off</span> </h3>
                                 </div>
                                 <h6 class="product-title pb-2">Select Color</h6>
                                 <ul class="color-variant coloradd" id="getColorToPrice">
@@ -693,7 +693,7 @@ input.input_getsize{
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-    $(document).ready(function(){
+    // $(document).ready(function(){
         // $(".color_id").click(function(){
         //     let colorid = $(this).val();
         //     let productid = $(this).attr('data-product');

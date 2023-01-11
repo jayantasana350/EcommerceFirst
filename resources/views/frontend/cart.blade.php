@@ -56,6 +56,7 @@
                                     $grand_total = 0;
                                 @endphp
                                 @foreach ($carts as $cart)
+                                {{-- <input type="text" value="{{ $cart->id }}" name="id[]"> --}}
                                 <tbody>
                                     <tr>
                                         <td>
@@ -75,14 +76,14 @@
                                             <h2 class="unit_price{{ $cart->id }}" data-unit{{ $cart->id }}="{{ number_format($cart->price, 2) }}">${{ number_format($cart->price, 2) }}</h2>
                                         </td>
                                         <td class="tdqt quantity cart-plus-minus">
-
+                                            <input type="hidden" name="cart_id[]" value="{{ $cart->id }}">
                                             <div class="qty-box">
                                                 <div class="input-group">
                                                     <div class="btn dec qtybutton qty_minus{{ $cart->id }}" style="border: 1px solid #ced4da;">-</div>
                                                     <input type="number" name="quantity[]" class="form-control qty_quantity{{ $cart->id }}" value="{{ $cart->quantity }}">
                                                     <div class="btn inc qtybutton qty_plus{{ $cart->id }}" style="border: 1px solid #ced4da;">+</div>
 
-                                                    <input type="hidden" name="cart_id[]" value="{{ $cart->id }}">
+                                                    {{-- <input type="hidden" name="cart_id[]" value="{{ $cart->id }}"> --}}
                                                 </div>
                                             </div>
                                         </td>
@@ -200,14 +201,14 @@
         $('.qty_minus{{ $car->id }}').click(function(){
             let qty_quantity = $('.qty_quantity{{ $car->id }}').val();
             let unit_price = $('.unit_price{{ $car->id }}').attr('data-unit{{ $car->id }}');
-            $('.unitprice{{ $car->id }}').html('$'+qty_quantity * unit_price);
+            $('.unitprice{{ $car->id }}').html('$'+qty_quantity * unit_price+'.00');
             // alert(qty_quantity * unit_price);
         });
 
         $('.qty_plus{{ $car->id }}').click(function(){
             let qty_quantity = $('.qty_quantity{{ $car->id }}').val();
             let unit_price = $('.unit_price{{ $car->id }}').attr('data-unit{{ $car->id }}');
-            $('.unitprice{{ $car->id }}').html('$'+qty_quantity * unit_price);
+            $('.unitprice{{ $car->id }}').html('$'+qty_quantity * unit_price+'.00');
         });
 
         @endforeach

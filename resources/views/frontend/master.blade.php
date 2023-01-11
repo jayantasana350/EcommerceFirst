@@ -1246,5 +1246,6 @@
             }
         });
         </script>
+        @yield('footer_cs')
 </body>
 </html>

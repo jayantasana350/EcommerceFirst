@@ -7,22 +7,19 @@ use App\Blog;
 use App\Category;
 use App\Product;
 use App\ProductGallery;
-use Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
+Use App\Cart;
 
 class FrontEndController extends Controller
 {
     function Front(){
         $product = Product::latest()->get();
         $attributes = Attributes::all();
-        $colle_ction = collect($attributes);
-        $groupdby = $colle_ction->groupBy('size_id');
         return view('frontend.front',[
             'product' => $product,
             'attributes' => $attributes,
-            'groupdby' => $groupdby,
         ]);
     }
 
@@ -45,7 +42,7 @@ class FrontEndController extends Controller
         $output = '';
         $colors = Attributes::where('size_id', $size)->where('product_id', $product)->get();
         foreach ($colors as $color) {
-            $output = $output . '<input type="radio" name="color_id" class="btn_check color_id" id="" value="'.$color->color_id.'" data-product="'.$color->product_id.'"><label class="btn btn_primary" class="bt_check" for="btn-check-2">'.$color->get_color->color_name.'</label>';;
+            $output = $output . '<input type="radio" name="color_id" class="btn_check color_id" id="" value="'.$color->color_id.'" data-product="'.$color->product_id.'"><label class="btn btn_primary" class="bt_check" for="btn-check-2">'.$color->get_color->color_name.'</label>';
         }
         echo $output;
     }
@@ -65,7 +62,7 @@ class FrontEndController extends Controller
     function GetSizeWisePrice($size, $product){
         $output = '';
         $prices = Attributes::where('size_id', $size)->where('product_id', $product)->get();
-        $output = $output . '<h3 class="price-detail getAttrPrice"> <input class="btn_price" type="text" name="price" value="'.$prices[0]->price.'" readonly></h3>';
+        $output = $output . '<h3 class="price-detail getAttrPrice"> <input class="btn_price" type="text" name="price" value="'.$prices[0]->price.'.00" readonly></h3>';
         echo $output;
     }
 
@@ -77,6 +74,35 @@ class FrontEndController extends Controller
         $output = $output . '<h3 class="price-detail getAttrPrice"> <input class="btn_price" type="text" name="price" value="'.$prices[0]->price.'" readonly></h3>';
             echo $output;
     }
+
+    // // Color Wise Size Ajax Post Request
+    // function GetqSizeWiseColor(Request $request){
+    //     $output = '';
+    //     // return $request->all();
+    //     if ($request->ajax()) {
+    //         $data = $request->all();
+    //         // return $data;
+    //         // echo "<pre>"; print_r($data); die;
+    //         $attrColorToSize = Attributes::where(['product_id' => $data['product_id']])->first();
+    //         // return $attrColorToSize;
+    //     }
+    //     $output = $output . '<h3 class="price-detail sizesadd"> <input class="btn_price" type="text" data-product="'.$attrColorToSize->product_id.'" name="color_id" value="'.$attrColorToSize->get_size->size_name.'"></h3>';
+    //     echo $output;
+    // }
+
+
+    function QuickSizeWiseColor($color, $product){
+        // return 'ok';
+        $output = '';
+        $prices = Attributes::where('color_id', $color)->where('product_id', $product)->get();
+        return $prices;
+        $output = $output . '<h3 class="price-detail getAttrPrice"> <input class="btn_price" type="text" name="price" value="'.$prices[0]->price.'" readonly></h3>';
+            echo $output;
+    }
+
+
+
+
 
     function ShopPage(){
         return view('frontend.shop');

@@ -19,7 +19,7 @@ class CreateCartsTable extends Migration
             $table->foreignId('product_id');
             $table->foreignId('color_id');
             $table->foreignId('size_id');
-            $table->integer('price');
+            $table->string('price');
             $table->integer('quantity');
             $table->timestamps();
         });

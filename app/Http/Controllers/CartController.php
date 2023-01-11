@@ -88,15 +88,21 @@ class CartController extends Controller
     }
 
     function UpdateCart(Request $request){
-        // return $request->all();
-        foreach ($request->cart_id as $key => $data) {
-            $cart = Cart::findOrFail($data);
-            $cart->quantity = $request->quantity[$key];
-            $cart->save();
-
+        // return $request->cart_id;
+        $cartupdate = Cart::findOrFail($request->cart_id);
+        foreach ($cartupdate as $key => $cudpate) {
+            $cudpate->quantity = $request->quantity[$key];
+            $cudpate->save();
             return back();
         }
-        // return back();
+        // foreach ($request->cart_id as $key => $data) {
+        //     return Cart::findOrFail($data);
+        //     // $cart->quantity = $request->quantity[$key];
+        //     // $cart->save();
+
+        //     return back();
+        // }
+
     }
 
     function SingleCartDelete($id){
@@ -107,6 +113,26 @@ class CartController extends Controller
 
     function CouponAdd(){
         return 'ok';
+    }
+
+    function QuickAddToCart(Request $quickrequest){
+        // return $quickrequest->all();
+        $quickcookie = Cookie::get('cookie_id');
+        if ($quickcookie) {
+            $uniquecookie = $quickcookie;
+        }else {
+            $uniquecookie = Str::random(8).rand(1,1000);
+            return Cookie::queue('cookie_id', $uniquecookie, 43200);
+        }
+            $qcart = new Cart;
+            $qcart->cookie_id = $uniquecookie;
+            $qcart->product_id = $quickrequest->product_id;
+            $qcart->color_id = $quickrequest->color_id;
+            $qcart->size_id = $quickrequest->size_id;
+            $qcart->price = $quickrequest->price;
+            $qcart->quantity = $quickrequest->quantity;
+            $qcart->save();
+            return back();
     }
 
 
